@@ -42,12 +42,29 @@ public class App {
        Branch.addaccount();
        Branch.addaccount();
        Branch.printaccounts();
-       Branch.getaccount();
+      // Branch.getaccount();
+//
+      // Branch.updateaccount();
+      // Branch.printaccounts();
+      // Branch.deleteaccount();
+      // Branch.printaccounts();
+         
+     // Account.deposit();
+     // Branch.printaccounts();
+     // Account.withdrawel();
+     //Account.transfer();
+     // Branch.printaccounts();
+     Account.checkbalance();
+     
+     Account.addcard();
+     Account.addcard();
+     Account.printcard();
 
-       Branch.updateaccount();
-       Branch.printaccounts();
-       Branch.deleteaccount();
-       Branch.printaccounts();
+       //Bank.addatm();
+       //Bank.addatm();
+       //Bank.printatm();
+       //Bank.updateatm();
+       //Bank.printatm();
 
 
 

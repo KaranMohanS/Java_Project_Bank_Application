@@ -153,6 +153,7 @@ public class Bank {
     int bid=checkbid();
 
     Atm atm=new Atm(id, add, bid);
+    addatm(atm);
    }
    
    public static void addatm(Atm atm)
@@ -189,7 +190,78 @@ public class Bank {
 //-----------------------------------------------------------------------------
 
 
+  public static void removeatm()
+  {
+    System.out.println("enter atm id");
+    int id=App.scanner.nextInt();
+    App.scanner.nextLine();
 
+    for(Atm x:atms)
+    {
+        if(x.getAtm_id()==id)
+        {
+            atms.remove(x);
+            break;
+        }
+    }
+  }
+
+  public static void getatm()
+  {
+    System.out.println("enter atm id");
+    int id=App.scanner.nextInt();
+    App.scanner.nextLine();
+
+    for(Atm x:atms)
+    {
+        if(x.getAtm_id()==id)
+        {
+            System.out.println(x);
+            break;
+        }
+    }
+  }
+
+  public static void updateatm()
+  {
+    System.out.println("enter atm id");
+    int id=App.scanner.nextInt();
+    App.scanner.nextLine();
+
+    for(Atm x:atms)
+    {
+        if(x.getAtm_id()==id)
+        {
+            System.out.println("enter option: 1 address");
+            int option=App.scanner.nextInt();
+            App.scanner.nextLine();
+
+            switch (option) {
+                case 1:
+                    
+                    System.out.println("enter new address");
+                    String newadd=App.scanner.nextLine();
+                    x.setAddress(newadd);
+                    break;
+            
+                default:
+                    System.out.println("invalied option: "+option);
+                    break;
+            }
+
+        }
+    }
+  }
+
+  public static void printatm()
+  {
+    for(Atm x:atms)
+    {
+        System.out.println(x);
+    }
+  }
+
+//------------------------------------------------------
 
 
 

@@ -2,6 +2,7 @@ package com.atm;
 
 public class Atm {
     
+    
 
     int atm_id;
     String address;
@@ -38,5 +39,12 @@ public class Atm {
         this.bank_id = bank_id;
     }
 
+    @Override
+    public String toString() {
+        return "Atm [atm_id=" + atm_id + ", address=" + address + ", bank_id=" + bank_id + "]";
+    }
+
+
+    
     
 }

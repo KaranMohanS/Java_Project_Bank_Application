@@ -2,7 +2,7 @@ package com.account;
 
 import java.io.EOFException;
 import java.util.ArrayList;
-import java.util.InputMismatchException;
+//import java.util.InputMismatchException;
 import java.util.List;
 import java.util.Map;
 import com.card.*;
@@ -190,133 +190,7 @@ public class Account {
 
 //----------------------------------------------------------------------------------------------------------------------
 
-    public static void addcard() throws Exception
-    {
-        System.out.println("enter card number");
-        long cno=checkcard();
-
-        System.out.println("enter user name");
-        String name=chechname();
-
-        System.out.println("enter card type");
-        String type=App.scanner.nextLine();
-
-        double balance=getbalance(type);
-
-        System.out.println("enter pin");
-        int pin=App.scanner.nextInt();
-        App.scanner.nextLine();
-
-        Card card=new Card(cno, name, type, balance, pin);
-        addcard(card);
-
-    }
-    public static void addcard(Card card)
-    {
-       cards.add(card);
-    }
-
-    public static String chechname() throws EOFException
-    {
-        String name=App.scanner.nextLine();
-        boolean found=false;
-        for(User x:User.list)
-        {
-            if(x.getName().equals(name))
-            {
-               found=true;
-               break;
-            }
-        }
-        if(found)
-        {
-            return name;
-        }
-        else
-        {
-            throw new EOFException("invalied name: "+name);
-        }
-    }
-
-    public static double getbalance(String type) throws Exception
-    {
-        double currentbalance=0.0;
-        switch (type) {
-            
-            case "debit":
-                
-                for(Map.Entry<Long,Account> x:Branch.map.entrySet())
-                {
-                    
-                    System.out.println("enter account number");
-                    long ac=App.scanner.nextLong();
-                    App.scanner.nextLine();
-
-                    if(x.getKey()==ac)
-                    {
-                        Account account=x.getValue();
-                         currentbalance=account.getBalance();
-                         break;
-                    }
-                }
-                
-                break;
-            case "credit":
-
-               double max=50000;
-               currentbalance=max;   
-        
-            default:
-                throw new Exception("invalied option: "+type);
-                
-        }
-        return currentbalance;
-    }
-
-    public static long checkcard() throws Exception {
-       
-
-       System.out.println("enter account number");
-       long a=App.scanner.nextLong();
-       App.scanner.nextLine();
-
-       long cno = App.scanner.nextLong();
-        App.scanner.nextLine();
-        boolean found=false;
-        for(Map.Entry<Long,Account> x: Branch.map.entrySet())
-        {
-            if(x.getKey()==a)
-            {
-                Account account=x.getValue();
-
-                if(account.getCard_no()==cno)
-                {
-                  found=true;
-                  break;
-                }
-            }
-        }
-        if(found)
-        {
-            return cno;
-        }
-        else
-        {
-            throw new Exception("invalied card number: "+cno);
-        }
-        
-    
-    }
-
-
-   public static void printcard()
-   {
-     for(Card x:cards)
-     {
-        System.out.println(x);
-     }
-   }
-
+   
 
 
 
@@ -326,7 +200,6 @@ public class Account {
     String account_type;
     int branch_id;
     int user_id;
-    long card_no;
     double balance;
     
 
@@ -335,15 +208,15 @@ public class Account {
    
 
 
-    public Account(long account_no, String name, String account_type, int branch_id, int user_id, long card_no,
+    public Account(long account_no, String name, String account_type, int branch_id, int user_id, 
             double balance) {
         this.account_no = account_no;
         this.name = name;
         this.account_type = account_type;
         this.branch_id = branch_id;
         this.user_id = user_id;
-        this.card_no = card_no;
         this.balance = balance;
+
     }
     public long getAccount_no() {
         return account_no;
@@ -392,20 +265,17 @@ public class Account {
     public void setBranch_id(int branch_id) {
         this.branch_id = branch_id;
     }
-    public long getCard_no() {
-        return card_no;
-    }
-    public void setCard_no(long card_no) {
-        this.card_no = card_no;
-    }
+    
+    
     public void setUser_id(int user_id) {
         this.user_id = user_id;
     }
 
     @Override
     public String toString() {
+
         return "Account [account_no=" + account_no + ", name=" + name + ", account_type=" + account_type
-                + ", branch_id=" + branch_id + ", user_id=" + user_id + ", card_no=" + card_no + ", balance=" + balance
+                + ", branch_id=" + branch_id + ", user_id=" + user_id + ", balance=" + balance
                 + "]";
     }
 

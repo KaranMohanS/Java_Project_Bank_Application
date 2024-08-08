@@ -33,11 +33,9 @@ public class Branch {
         System.out.println("enter user id");
         int id = checkid();
 
-        System.out.println("enter card number");
-        long card = App.scanner.nextLong();
-        App.scanner.nextLine();
+        
 
-        Account account = new Account(account_no, name, type, bid, id, card, balance);
+        Account account = new Account(account_no, name, type, bid, id, balance);
         addaccount(account);
 
     }
@@ -143,13 +141,7 @@ public class Branch {
                     account.setAccount_type(newa);
                     break;
 
-                case 3:
-                     System.out.println("enter new card number");
-                     long newc=App.scanner.nextLong();
-                     App.scanner.nextLine();
-
-                     account.setCard_no(newc);
-                     break;
+               
                
                 default:
                     System.out.println("invalid option: "+option);

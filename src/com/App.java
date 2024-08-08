@@ -2,8 +2,14 @@ package com;
 
 import com.account.Account;
 import com.bank.Bank;
+import com.bank.BankJdbc;
 import com.branch.Branch;
+import com.branch.BranchJdbc;
+import com.branch.BranchService;
 import com.user.User;
+import com.user.UserService;
+import com.user.Userjdbc;
+
 import java.util.Scanner;
 public class App {
 
@@ -11,7 +17,7 @@ public class App {
     public static void main(String[] args) throws Exception {
         System.out.println("Hello, World!");
 
-          User user=new User(0, "karan", 12, "male", 993848949l, "sirumugai");
+       /*    User user=new User(0, "karan", 12, "male", 993848949l, "sirumugai");
          // User user1=new User(1, "karan", 12, "male", 993848949l, "sirumugai");
 //
           User.adduser(user);
@@ -64,9 +70,40 @@ public class App {
        //Bank.addatm();
        //Bank.printatm();
        //Bank.updateatm();
-       //Bank.printatm();
+       //Bank.printatm();*/
 
+      // UserService.adduser();
+      // UserService.adduser();
+       //UserService.printuser();
+       ////UserService.getuser();
+       //System.out.println(UserService.getuser());
+       ////UserService.getuser().toString();
+       ////UserService.deleteuser();
+       //UserService.updateuser();
+       //UserService.printuser();
+//
+       ////BranchService.addbranch();
+       ////BranchService.addbranch();
+       //BranchService.printbranch();
+       ////BranchService.deletebranch();
+       // System.out.println(BranchService.getbranch());
+       // BranchService.updatebranch();
+       //BranchService.printbranch();
 
+      // BankJdbc.addbank();
+       //BankJdbc.printbank();
+
+       //BranchJdbc.addbranch();
+       //BranchJdbc.printbranch();
+       //BranchJdbc.getbranch();
+       //BranchJdbc.updatebranch();
+       //BranchJdbc.deletebranch();
+
+       //Userjdbc.adduser();
+       Userjdbc.printaccount();
+       //Userjdbc.getuser();
+       //Userjdbc.deleteuser();
+       //Userjdbc.updateuser();
 
     }
 }

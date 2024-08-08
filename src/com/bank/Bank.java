@@ -268,9 +268,9 @@ public class Bank {
 
 
 
-     int bank_id=1;
-     String bank_name=" CANARA ";
-     String address=" Mettupalayam ";
+     final int BANKID=1;
+     final String BANKNAME=" CANARA ";
+     final String ADDRESS=" Mettupalayam ";
    
 
 
@@ -278,31 +278,21 @@ public class Bank {
 
 
     public int getBank_id() {
-        return bank_id;
+        return BANKID;
     }
 
-    public void setid(int id)
-    {
-        this.bank_id=id;
-    }
+  
 
     public String getBank_name() {
-        return bank_name;
+        return BANKNAME;
     }
 
-    public void setname(String name)
-    {
-        this.bank_name=name;
-    }
 
     public String getAddress() {
-        return address;
+        return ADDRESS;
     }
 
-    public void setadd(String add)
-    {
-        this.address=add;
-    }
+  
 
 
 

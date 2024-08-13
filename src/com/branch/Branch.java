@@ -34,8 +34,7 @@ public class Branch {
         int id = checkid();
 
         
-
-        Account account = new Account(account_no, name, type, bid, id, balance);
+        Account account=new Account(account_no, name, bid, id,type, balance);
         addaccount(account);
 
     }
@@ -134,14 +133,6 @@ public class Branch {
                      long newac=App.scanner.nextLong();
                      account.setAccount_no(newac);
                     break;
-                case 2:
-                    System.out.println("enter account type");
-                    String newa=App.scanner.nextLine();
-
-                    account.setAccount_type(newa);
-                    break;
-
-               
                
                 default:
                     System.out.println("invalid option: "+option);
@@ -162,6 +153,10 @@ public class Branch {
 
         map.remove(account);
     }
+
+    //-----------------------------------------------
+
+
 
     int branch_id;
     String address;

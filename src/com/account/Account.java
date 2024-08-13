@@ -203,21 +203,15 @@ public class Account {
     double balance;
     
 
-    
-    
-   
-
-
-    public Account(long account_no, String name, String account_type, int branch_id, int user_id, 
-            double balance) {
+    public Account(long account_no, String name,  int branch_id, int user_id, String account_type,double balance) {
         this.account_no = account_no;
         this.name = name;
         this.account_type = account_type;
         this.branch_id = branch_id;
         this.user_id = user_id;
         this.balance = balance;
-
     }
+
     public long getAccount_no() {
         return account_no;
     }

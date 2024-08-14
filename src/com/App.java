@@ -1,6 +1,7 @@
 package com;
 
 import com.account.Account;
+import com.account.AccountJdbc;
 import com.account.AccountService;
 import com.bank.Bank;
 import com.bank.BankJdbc;
@@ -195,9 +196,10 @@ public class App {
                         if(userInput==1)
                         {
                             System.out.println("enter option: 1  ");
-                            Userjdbc.printaccount();
-                            BankJdbc.printbank();
-                            BranchJdbc.printbranch();
+                           // Userjdbc.printaccount();
+                           // BankJdbc.printbank();
+                           // BranchJdbc.printbranch();
+                           AccountJdbc.addaccount();
                         }
                         else
                         break;

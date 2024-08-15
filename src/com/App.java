@@ -199,7 +199,8 @@ public class App {
                            // Userjdbc.printaccount();
                            // BankJdbc.printbank();
                            // BranchJdbc.printbranch();
-                           AccountJdbc.addaccount();
+                           //AccountJdbc.addaccount();
+                           AccountJdbc.printaccounts();
                         }
                         else
                         break;

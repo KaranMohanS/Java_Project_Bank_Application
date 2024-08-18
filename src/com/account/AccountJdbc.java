@@ -75,4 +75,35 @@ public class AccountJdbc {
         }
     }
 
+    public static void getaccount()
+    {
+        String query=App.scanner.nextLine();
+
+        try {
+            
+            Connection c=databseconnection.GetConnection();
+            Statement s=c.createStatement();
+            ResultSet rs=s.executeQuery(query);
+
+            while (rs.next()) {
+                
+                System.out.println("Account number: " + rs.getLong(1) + "\n" +
+                        "Account holder name: " + rs.getString(2) + "\n" +
+                        "Account type: " + rs.getString(3) + "\n" +
+                        "Branch number: " + rs.getInt(4) + "\n" +
+                        "User id: " + rs.getInt(5) + "\n" +
+                        "Account balance: " + rs.getDouble(6) + "\n");
+            }
+
+            c.close();
+            s.close();
+            rs.close();
+        } catch (Exception e) {
+            // TODO: handle exception
+        }
+
+
+    }
+
+
 }

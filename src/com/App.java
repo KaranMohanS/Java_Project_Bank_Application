@@ -201,6 +201,7 @@ public class App {
                            // BranchJdbc.printbranch();
                            //AccountJdbc.addaccount();
                            AccountJdbc.printaccounts();
+                           AccountJdbc.getaccount();
                         }
                         else
                         break;

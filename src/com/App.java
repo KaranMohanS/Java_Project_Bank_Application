@@ -202,6 +202,7 @@ public class App {
                            //AccountJdbc.addaccount();
                            AccountJdbc.printaccounts();
                            AccountJdbc.getaccount();
+                           AccountJdbc.deleteaccount();
                         }
                         else
                         break;

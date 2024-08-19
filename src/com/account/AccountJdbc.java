@@ -77,6 +77,7 @@ public class AccountJdbc {
 
     public static void getaccount()
     {
+        System.out.println("enter get query");
         String query=App.scanner.nextLine();
 
         try {
@@ -103,6 +104,26 @@ public class AccountJdbc {
         }
 
 
+    }
+
+    public static void deleteaccount()
+    {
+        System.out.println("enter delete query");
+        String path=App.scanner.nextLine();
+
+        try {
+            
+            Connection c=databseconnection.GetConnection();
+            Statement s=c.createStatement();
+            int row=s.executeUpdate(path);
+
+            System.out.println("number of row affected: "+row);
+
+            c.close();
+            s.close();
+        } catch (Exception e) {
+            // TODO: handle exception
+        }
     }
 
 

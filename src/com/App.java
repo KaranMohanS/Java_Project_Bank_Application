@@ -201,8 +201,9 @@ public class App {
                            // BranchJdbc.printbranch();
                            //AccountJdbc.addaccount();
                            AccountJdbc.printaccounts();
-                           AccountJdbc.getaccount();
-                           AccountJdbc.deleteaccount();
+                           AccountJdbc.whithdrawel();
+                           //AccountJdbc.getaccount();
+                           //AccountJdbc.deleteaccount();
                         }
                         else
                         break;

@@ -126,5 +126,67 @@ public class AccountJdbc {
         }
     }
 
+    public static void whithdrawel() throws Exception
+    {
+        System.out.println("enter account number");
+        long account_no=App.scanner.nextLong();
+        App.scanner.nextLine();
 
+        
+        System.out.println("enter whithdrawel amount");
+        double amount=App.scanner.nextDouble();
+        App.scanner.nextLine();
+
+        double newamount=currentamount(account_no);
+
+        if(newamount>=amount)
+        {
+            double newbalance=newamount-amount;
+
+        String query="update account set balance=? where accountNumber=?";
+
+        try {
+            
+            Connection c=databseconnection.GetConnection();
+            PreparedStatement p=c.prepareStatement(query);
+            p.setDouble(1, newbalance);
+            p.setLong(2, account_no);
+
+            int row =p.executeUpdate();
+
+            System.out.println("number of row affected: "+row);
+
+            c.close();
+            p.close();
+        } catch (Exception e) {
+            // TODO: handle exception
+        }
+        }
+
+    }
+    public static double currentamount(long acno)
+    {
+          
+        String query="select balance from account where accountNumber=?";
+
+        try {
+            Connection c=databseconnection.GetConnection();
+            PreparedStatement p=c.prepareStatement(query);
+            p.setLong(1, acno);
+
+            ResultSet rs=p.executeQuery();
+
+            while (rs.next()) {
+                return rs.getDouble("balance");
+            }
+            c.close();
+            p.close();
+            rs.close();
+        } catch (Exception e) {
+            // TODO: handle exception
+        }
+        return 0.0;
+    }
+
+   
 }

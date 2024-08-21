@@ -32,7 +32,7 @@ public class App {
 
                         if (user_input == 1) {
                               System.out.println(
-                                          "enter bank option: 1 user details | 2 add branch | 3 add account | 4 whithdrawel | 5 Deposit amount | 6 check balance | 7 exit");
+                                          "enter bank option: 1 user details | 2 add  branch | 3 add account | 4 whithdrawel | 5 Deposit amount | 6 check balance | 7 exit");
                               int option = scanner.nextInt();
                               scanner.nextLine();
 
@@ -140,7 +140,7 @@ public class App {
                                                       AccountService.getaccount();
                                                       break;
                                                 case 4:
-
+userInput
                                                       AccountService.deleteaccount();
                                                       break;
 
@@ -189,24 +189,17 @@ public class App {
                   int userInput=1;
 
                   while (userInput==1) {
-
+                        System.out.println("enter option: 1  ");
                         userInput=App.scanner.nextInt();
                         App.scanner.nextLine();
                         
                         if(userInput==1)
                         {
-                            System.out.println("enter option: 1  ");
-                           // Userjdbc.printaccount();
-                           // BankJdbc.printbank();
-                           // BranchJdbc.printbranch();
-                           //AccountJdbc.addaccount();
-                           AccountJdbc.printaccounts();
-                           AccountJdbc.whithdrawel();
-                           //AccountJdbc.getaccount();
-                           //AccountJdbc.deleteaccount();
+                            
+                          
                         }
                         else
-                        break;
+                        found=false;
 
 
                   }

@@ -1,5 +1,6 @@
 package com;
 
+import com.Login.LoginService;
 import com.account.Account;
 import com.account.AccountJdbc;
 import com.account.AccountService;
@@ -169,7 +170,7 @@ userInput
                                          break;
                                     
                                     case 7:
-
+`
                                          break;
 
                                     default:
@@ -179,7 +180,6 @@ userInput
                               break;
                   }
             }*/
-            // -----------------------------------------
 
             Boolean found=true;
             while (found) {
@@ -195,7 +195,7 @@ userInput
                         
                         if(userInput==1)
                         {
-                            
+                           LoginService.createaccount();
                           
                         }
                         else

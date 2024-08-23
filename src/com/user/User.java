@@ -150,8 +150,8 @@ public class User {
 
     @Override
     public String toString() {
-        return "User [id=" + id + ", name=" + name + ", age=" + age + ", gender=" + gender + ", ph=" + ph + ", address="
-                + address + "]";
+        return "User [id=" + this.id + ", name=" + this.name + ", age=" + this.age + ", gender=" + this.gender + ", ph=" + this.ph + ", address="
+                + this.address + "]";
     }
 
 }

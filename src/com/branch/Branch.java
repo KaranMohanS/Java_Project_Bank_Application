@@ -194,7 +194,7 @@ public class Branch {
 
     @Override
     public String toString() {
-        return "Branch [branch_id=" + branch_id + ", address=" + address + ", bank_id=" + bank_id + "]";
+        return "Branch [branch_id=" + this.branch_id + ", address=" + this.address + ", bank_id=" + this.bank_id + "]";
     }
 
 }

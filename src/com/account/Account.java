@@ -265,11 +265,12 @@ public class Account {
         this.user_id = user_id;
     }
 
+
     @Override
     public String toString() {
 
-        return "Account [account_no=" + account_no + ", name=" + name + ", account_type=" + account_type
-                + ", branch_id=" + branch_id + ", user_id=" + user_id + ", balance=" + balance
+        return "Account [account_no=" + this.account_no + ", name=" + this.name + ", account_type=" + this.account_type
+                + ", branch_id=" + this.branch_id + ", user_id=" + this.user_id + ", balance=" + this.balance
                 + "]";
     }
 

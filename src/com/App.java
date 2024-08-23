@@ -184,8 +184,6 @@ userInput
             Boolean found=true;
             while (found) {
 
-
-                  
                   int userInput=1;
 
                   while (userInput==1) {
@@ -195,13 +193,52 @@ userInput
                         
                         if(userInput==1)
                         {
-                           LoginService.createaccount();
+                           System.out.println("Enter Option: 1 Login | 2 Create Account | 3 exit");
+                           int option=App.scanner.nextInt();
+                           App.scanner.nextLine();
+                           if(option==1)
+                           {
+                              System.out.println("Enter option: 1 User Login | 2 Employee Login");
+                              {
+                                    int option1=App.scanner.nextInt();
+                                    App.scanner.nextLine();
+
+                                    if(option1==1)
+                                    {
+                                      if(LoginService.Loginaccess())
+                                      {
+                                          System.out.println("--- User Login Successfully ---");
+                                      }
+                                      else
+                                      {
+                                          System.out.println("--- Invalid Data ---");
+                                          userInput=0;
+                                      }
+                                    }
+                                    else if(option1==2)
+                                    {
+                                       LoginService.Loginaccess();
+                                       System.out.println("--- Empolyee Login Successfully ---");
+                                    }
+                                    else
+                                    {
+                                          System.out.println("--- Invalid Data ---");                                         
+                                          userInput=0;
+                                    }
+                              }
+                           }
+                           else if(option==2)
+                           {
+                              LoginService.createaccount();
+                           }
+                           else
+                           {
+                              userInput=0;
+                           }
                           
                         }
                         else
                         found=false;
-
-
                   }
 
 
@@ -209,4 +246,6 @@ userInput
             }
 
       }
+
+
 }

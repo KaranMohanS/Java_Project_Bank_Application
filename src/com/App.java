@@ -208,6 +208,7 @@ userInput
                                       if(LoginService.Loginaccess())
                                       {
                                           System.out.println("--- User Login Successfully ---");
+                                          useroperation();
                                       }
                                       else
                                       {
@@ -217,12 +218,20 @@ userInput
                                     }
                                     else if(option1==2)
                                     {
-                                       LoginService.Loginaccess();
-                                       System.out.println("--- Empolyee Login Successfully ---");
+                                       if(LoginService.Loginaccess())
+                                       {
+                                          System.out.println("--- Empolyee Login Successfully ---");
+
+                                       }
+                                       else
+                                       {
+                                          System.out.println("--- Invalid Data ---");                                         
+
+                                       }
                                     }
                                     else
                                     {
-                                          System.out.println("--- Invalid Data ---");                                         
+                                          System.out.println("invalid option: "+option1);
                                           userInput=0;
                                     }
                               }
@@ -245,6 +254,18 @@ userInput
 
             }
 
+      }
+
+
+      public static void useroperation()
+      {
+         
+            System.out.println("enter option: 1 deposit | 2 whitdrawel | 3 money transfer | 4 check balance");
+      }
+
+      public static void employeeoperation()
+      {
+            System.out.println("enter option: 1 add branch | 2 delete branch | 3 ");
       }
 
 

@@ -158,7 +158,7 @@ public class AccountJdbc {
                 // TODO: handle exception
             }
         }
-
+        //   nalaki kovil ku varuviya
     }
 
     public static double currentamount(long acno) {
@@ -255,4 +255,17 @@ public class AccountJdbc {
         }
 
     }
+//-------------------------------------------------------
+
+   public static void transfermoney()
+   {
+      System.out.println("enter beneficiary account number");
+      long ba=App.scanner.nextLong();
+      App.scanner.nextLine();
+
+      System.out.println("enter beneficiary name");
+      String name=App.scanner.nextLine();
+
+      
+   }
 }

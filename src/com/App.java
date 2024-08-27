@@ -261,11 +261,36 @@ userInput
       {
          
             System.out.println("enter option: 1 deposit | 2 whitdrawel | 3 money transfer | 4 check balance");
+            int option=App.scanner.nextInt();
+            App.scanner.nextLine();
+
+            switch (option) {
+                  case 1:
+                        AccountJdbc.deposit();useroperation();
+                        break;
+
+                  case 2:
+                        try {
+                              AccountJdbc.whithdrawel();
+                        } catch (Exception e) {
+                              // TODO Auto-generated catch block
+                              e.printStackTrace();
+                        }useroperation();
+                        break;
+
+                  case 3:
+                        
+            
+                  default:
+                        break;
+            }
+
+
       }
 
       public static void employeeoperation()
       {
-            System.out.println("enter option: 1 add branch | 2 delete branch | 3 ");
+            System.out.println("enter option: 1 add branch | 2 delete branch | 3 view branch | 4 get branch | 5 view accounts | 6 ");
       }
 
 

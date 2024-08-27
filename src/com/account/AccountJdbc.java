@@ -259,6 +259,9 @@ public class AccountJdbc {
 
    public static void transfermoney()
    {
+      System.out.println("enter beneficiary bank name");
+      String bank=App.scanner.nextLine();
+      
       System.out.println("enter beneficiary account number");
       long ba=App.scanner.nextLong();
       App.scanner.nextLine();

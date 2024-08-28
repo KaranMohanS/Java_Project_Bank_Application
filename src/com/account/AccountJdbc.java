@@ -261,7 +261,7 @@ public class AccountJdbc {
    {
       System.out.println("enter beneficiary bank name");
       String bank=App.scanner.nextLine();
-      
+
       System.out.println("enter beneficiary account number");
       long ba=App.scanner.nextLong();
       App.scanner.nextLine();
@@ -269,6 +269,14 @@ public class AccountJdbc {
       System.out.println("enter beneficiary name");
       String name=App.scanner.nextLine();
 
+      System.out.println("enter sender account number");
+      long accno=App.scanner.nextLong();
+
+      System.out.println("enter amount");
+      double amount=App.scanner.nextDouble();
+      App.scanner.nextLine();
+
+      
       
    }
 }

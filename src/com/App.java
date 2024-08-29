@@ -279,7 +279,14 @@ userInput
                         break;
 
                   case 3:
-                        
+                        AccountJdbc.transfermoney();
+                        useroperation();
+                        break;
+
+                  case 4:
+                       AccountJdbc.balance();
+                       useroperation();
+                       break;
             
                   default:
                         break;

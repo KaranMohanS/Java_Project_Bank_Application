@@ -276,6 +276,27 @@ public class AccountJdbc {
       double amount=App.scanner.nextDouble();
       App.scanner.nextLine();
 
+      double newbalance=getbalance(accno);
+      
+
+      if (newbalance>=amount) {
+         
+        newbalance=newbalance-amount;
+        String query="update account set balance=? where accountNumber=?";
+
+        try (Connection c=databseconnection.GetConnection();
+             PreparedStatement p=c.prepareStatement(query)) {
+            
+                p.setDouble(1, newbalance);
+                p.setLong(2, accno);
+
+            System.out.println("---Money Transfer Successful---"+p.executeUpdate());
+        } catch (Exception e) {
+            // TODO: handle exception
+        }
+
+      }
+
       
       
    }

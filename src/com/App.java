@@ -205,7 +205,7 @@ userInput
 
                                     if(option1==1)
                                     {
-                                      if(LoginService.Loginaccess())
+                                      if(LoginService.Loginaccess(option1))
                                       {
                                           System.out.println("--- User Login Successfully ---");
                                           useroperation();
@@ -218,7 +218,7 @@ userInput
                                     }
                                     else if(option1==2)
                                     {
-                                       if(LoginService.Loginaccess())
+                                       if(LoginService.Loginaccess(option1))
                                        {
                                           System.out.println("--- Empolyee Login Successfully ---");
 
@@ -260,7 +260,7 @@ userInput
       public static void useroperation()
       {
          
-            System.out.println("enter option: 1 deposit | 2 whitdrawel | 3 money transfer | 4 check balance");
+            System.out.println("enter option: 1 deposit | 2 whitdrawel | 3 money transfer | 4 check balance | 5 add account details");
             int option=App.scanner.nextInt();
             App.scanner.nextLine();
 
@@ -285,6 +285,11 @@ userInput
 
                   case 4:
                        AccountJdbc.balance();
+                       useroperation();
+                       break;
+
+                  case 5:
+                       AccountJdbc.addaccount();
                        useroperation();
                        break;
             

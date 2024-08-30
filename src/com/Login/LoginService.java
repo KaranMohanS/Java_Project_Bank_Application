@@ -59,7 +59,7 @@ public class LoginService {
 
     //--------------------------------------------------------------
 
-    public static boolean Loginaccess()
+    public static boolean Loginaccess(int option1)
     {
         System.out.println("enter name");
         String name=App.scanner.nextLine();
@@ -68,8 +68,6 @@ public class LoginService {
         int pass=App.scanner.nextInt();
         App.scanner.nextLine();
         
-        System.out.println("enter type");
-        String type=App.scanner.nextLine();
 
         File file=new File(path);
 
@@ -81,10 +79,23 @@ public class LoginService {
                 while ((line=bufferedReader.readLine())!=null) {
                     
                     String[] arr=line.split(",");
-
-                    if(arr[0].equals(name) && Integer.parseInt(arr[1])==pass && arr[2].equals(type))
+                    if(option1==1)
+                    {
+                    if(arr[0].equals(name) && Integer.parseInt(arr[1])==pass && arr[2].equals("User"))
                     {
                         return true;
+                    }
+                    }
+                    else if(option1==2)
+                    {
+                        if(arr[0].equals(name) && Integer.parseInt(arr[1])==pass && arr[2].equals("Employee"))
+                        {
+                            return true;
+                        }
+                    }
+                    else
+                    {
+                        throw new Exception("invalied option: "+option1);
                     }
                 }
         } catch (Exception e) {

@@ -260,7 +260,7 @@ userInput
       public static void useroperation()
       {
          
-            System.out.println("enter option: 1 deposit | 2 whitdrawel | 3 money transfer | 4 check balance | 5 add account details");
+            System.out.println("enter option: 1 deposit | 2 whitdrawel | 3 money transfer | 4 check balance | 5 add account details | 6 update account | 7 disply account");
             int option=App.scanner.nextInt();
             App.scanner.nextLine();
 
@@ -292,6 +292,16 @@ userInput
                        AccountJdbc.addaccount();
                        useroperation();
                        break;
+
+                  case 6:
+                       AccountJdbc.updateaccount();
+                       useroperation();
+                       break;
+
+                  case 7:
+                      AccountJdbc.printaccounts();
+                      useroperation();
+                      break;
             
                   default:
                         break;

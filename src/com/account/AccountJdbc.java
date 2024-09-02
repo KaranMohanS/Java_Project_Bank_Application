@@ -51,8 +51,9 @@ public class AccountJdbc {
     }
 
     public static void printaccounts() {
-
-        String query = "select * from account";
+        
+        System.out.println("enter disply query");
+        String query = App.scanner.nextLine();
 
         try {
             Connection c = databseconnection.GetConnection();
@@ -102,6 +103,26 @@ public class AccountJdbc {
             // TODO: handle exception
         }
 
+    }
+
+    public static void updateaccount()
+    {
+        System.out.println("enter update query");
+        String query=App.scanner.nextLine();
+        
+        try {
+            Connection c=databseconnection.GetConnection();
+            Statement s=c.createStatement();
+            int row=s.executeUpdate(query);
+            System.out.println("number of row affected: "+row);
+            
+            c.close();
+            s.close();
+        }
+        catch (Exception e) {
+            // TODO: handle exception
+        }
+    
     }
 
     public static void deleteaccount() {

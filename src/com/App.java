@@ -221,7 +221,7 @@ userInput
                                        if(LoginService.Loginaccess(option1))
                                        {
                                           System.out.println("--- Empolyee Login Successfully ---");
-
+                                          employeeoperation();
                                        }
                                        else
                                        {
@@ -313,6 +313,36 @@ userInput
       public static void employeeoperation()
       {
             System.out.println("enter option: 1 add branch | 2 delete branch | 3 view branch | 4 get branch | 5 view accounts | 6 ");
+            int option=scanner.nextInt();
+            scanner.nextLine();
+
+            switch (option) {
+                  case 1:
+                       BranchJdbc.addbranch();
+                       employeeoperation();
+                        break;
+
+                  case 2:
+                      BranchJdbc.deletebranch();
+                      employeeoperation();
+                      break;
+
+                  case 3:
+                      BranchJdbc.printbranch();
+                      employeeoperation();
+                      break;
+
+                  case 4:
+                      BranchJdbc.getbranch();
+                      employeeoperation();
+                      break;
+
+                  case 5:
+                      AccountJdbc.printaccounts();
+            
+                  default:
+                        break;
+            }
       }
 
 

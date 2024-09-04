@@ -90,7 +90,7 @@ public class BranchService {
              BufferedWriter bufferedWriter=new BufferedWriter(new FileWriter(temp))) {
 
                 String line;
-                Branch branch=null;
+               
 
                 while ((line=bufferedReader.readLine())!=null) {
                     String[] arr=line.split(",");

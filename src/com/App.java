@@ -307,12 +307,11 @@ userInput
                         break;
             }
 
-
       }
 
       public static void employeeoperation()
       {
-            System.out.println("enter option: 1 add branch | 2 delete branch | 3 view branch | 4 get branch | 5 view accounts | 6 ");
+            System.out.println("enter option: 1 add branch | 2 delete branch | 3 view branchs | 4 get branch | 5 view accounts | ");
             int option=scanner.nextInt();
             scanner.nextLine();
 
@@ -320,7 +319,7 @@ userInput
                   case 1:
                        BranchJdbc.addbranch();
                        employeeoperation();
-                        break;
+                       break;
 
                   case 2:
                       BranchJdbc.deletebranch();
@@ -339,6 +338,8 @@ userInput
 
                   case 5:
                       AccountJdbc.printaccounts();
+                      employeeoperation();
+                      break;
             
                   default:
                         break;

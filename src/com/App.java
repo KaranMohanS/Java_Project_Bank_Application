@@ -311,7 +311,7 @@ userInput
 
       public static void employeeoperation()
       {
-            System.out.println("enter option: 1 add branch | 2 delete branch | 3 view branchs | 4 get branch | 5 view accounts | ");
+            System.out.println("enter option: 1 add branch | 2 delete branch | 3 view branchs | 4 get branch | 5 view accounts | 6 exit ");
             int option=scanner.nextInt();
             scanner.nextLine();
 
@@ -339,6 +339,9 @@ userInput
                   case 5:
                       AccountJdbc.printaccounts();
                       employeeoperation();
+                      break;
+
+                  case 6:
                       break;
             
                   default:
